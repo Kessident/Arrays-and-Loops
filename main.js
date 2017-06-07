@@ -142,10 +142,11 @@ var numbersTwo = [33,56,72,2,5,66,90,21,42];
 // A:
 
 function joinArrays(arrayOfArrays) {
-  for (var i = 1; i < arrayOfArrays.length; i++) {
-    arrayOfArrays[0].push(arrayOfArrays[i]);
+  var newArray = []
+  for (var i = 0; i < arrayOfArrays.length-1; i++) {
+    newArray = arrayOfArrays[i].concat(arrayOfArrays[i+1]);
   }
-  return arrayOfArrays[0];
+  return newArray;
 }
 console.assert(joinArrays([numbers, numbersTwo]).toString() === '1,12,4,18,9,7,11,3,101,5,6,33,56,72,2,5,66,90,21,42', {'message': 'joinArrays should return "1,12,4,18,9,7,11,3,101,5,6,33,56,72,2,5,66,90,21,42"'});
 
